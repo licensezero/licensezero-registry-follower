@@ -9,8 +9,13 @@ pull(
     }
     var doc = update.doc
     if (!doc) return
-    if (doc.licensezero) {
-      console.log(JSON.stringify(doc))
+    if (doc.versions) {
+      Object.keys(doc.versions).forEach(function (version) {
+        var meta = doc.versions[version]
+        if (doc.licensezero) {
+          console.log(JSON.stringify(doc))
+        }
+      })
     }
   })
 )
